@@ -1,0 +1,30 @@
+
+server:
+  port: ${APP_PORT:8088}
+  servlet:
+    context-path: /episen/api/v1 
+
+
+app:
+  keystore:
+    file: "src/main/resources/keys/server.p12"
+    alias: "episen"
+    password: "episen"
+     
+management:
+  health:
+    show-details: always
+  metrics:
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+    
+security:
+  require-ssl: false
+  basic:
+    enabled: false
+    
+
+       
